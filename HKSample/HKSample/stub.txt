@@ -1,0 +1,67 @@
+{
+"code": 0,
+"description": "string",
+"lastUpdateTime": 0,
+"payload": [
+{
+"cityName": "沈阳市",
+"cityId": "1758",
+"pictureUrl": "http://static.evershare.cn/59d6dcddcd3143dc939d6570ed249d9d",
+"remarks": "“”一朝古都“”，200个网点300台\r\n车500个电桩123123123121111",
+"serviceTel": "024-83666666",
+"areaList": [
+"210110",
+"210111",
+"210113"
+]
+},
+{
+"cityName": "大连市",
+"cityId": "1771",
+"pictureUrl": "http://static.evershare.cn/bbe59a0ec4364470a0e610725fb8f5e7",
+"remarks": "北方明珠，已覆盖30个网点，270台车11",
+"serviceTel": "0411-23597864",
+"areaList": [
+"210110",
+"210111",
+"210113"
+]
+},
+{
+"cityName": "邯郸市",
+"cityId": "1621",
+"pictureUrl": "http://static.evershare.cn/1a6b278a823745c4acae8634aaef6b33",
+"remarks": "行在成语之乡，一梦一步一胡服",
+"serviceTel": "400-100-9877",
+"areaList": [
+"210110",
+"210111",
+"210113"
+]
+},
+{
+"cityName": "无锡市",
+"cityId": "78a57b55b5134550b0d3f73c206c68b0",
+"pictureUrl": "http://static.evershare.cn/6a04252ff71943ce91d26197244e4d81",
+"remarks": "行在太湖明珠，锡春雅宴紫砂壶",
+"serviceTel": "400-100-9877",
+"areaList": [
+"210110",
+"210111",
+"210113"
+]
+},
+{
+"cityName": "南宁市",
+"cityId": "a4787b49ed1c49ee933333c20214cf75",
+"pictureUrl": "http://static.evershare.cn/350f3e1a9a0044b88a273c170b9e2b45",
+"remarks": "行在邕城，月满星灿半城楼",
+"serviceTel": "400-100-9877",
+"areaList": [
+"210110",
+"210111",
+"210113"
+]
+}
+]
+}

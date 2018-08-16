@@ -1,0 +1,31 @@
+//
+//  get_frame.h
+//  facial_app
+//
+//  Created by zhang pengjun on 15/5/18.
+//  Copyright (c) 2015年 zhang pengjun. All rights reserved.
+//
+
+
+/*
+ 
+ 纯代码 适配算法
+ 
+ */
+
+
+
+#import <Foundation/Foundation.h>
+
+@interface get_frame : NSObject
++(NSString *)return_frame:(NSString *)input_frame;
+
++(float)return_change_height:(float)myH;
++(float)return_change_weight:(float)myW;
++(float)return_change_X:(float)myX;
++(float)return_change_Y:(float)myY;
+
++(float)return_font_size:(float)size;
+
+
+@end

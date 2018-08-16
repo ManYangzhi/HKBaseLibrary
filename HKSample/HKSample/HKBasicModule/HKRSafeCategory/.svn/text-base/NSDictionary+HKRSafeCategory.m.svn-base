@@ -1,0 +1,39 @@
+//
+//  NSDictionary+LBTSafeCategory.m
+//  RebornPetShow
+//
+//  Created by staffy on 15/12/23.
+//  Copyright © 2015年 Lucifery. All rights reserved.
+//
+
+#import "NSDictionary+HKRSafeCategory.h"
+
+@implementation NSDictionary (HKRSafeCategory)
+
+- (id)hkr_objectForKey:(id)akey
+{
+    if (!akey)
+    {
+        return [self objectForKey:@""];
+    }
+        return [self objectForKey:[NSString stringWithFormat:@"%@",akey]];
+}
+
+
+
+@end
+
+
+@implementation NSMutableDictionary (HKRSafeCategory)
+
+-(void)hkr_setObject:(id)anObject forKey:(id<NSCopying>)aKey
+{
+    if (!anObject) {
+        
+        return [self setObject:@"" forKey:aKey];
+    }
+    return [self setObject:anObject forKey:aKey];
+}
+
+@end
+

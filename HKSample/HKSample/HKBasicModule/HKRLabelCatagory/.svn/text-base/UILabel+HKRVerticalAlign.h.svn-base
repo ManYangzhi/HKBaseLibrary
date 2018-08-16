@@ -1,0 +1,14 @@
+//
+//  UILabel+HKRVerticalAlign.h
+//  KoraApp
+//
+//  Created by GongM on 16/5/19.
+//  Copyright © 2016年 Neusoft. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface UILabel (HKRVerticalAlign)
+- (void)alignTop;
+- (void)alignBottom;
+@end

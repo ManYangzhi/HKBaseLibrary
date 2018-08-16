@@ -1,0 +1,24 @@
+inhibit_all_warnings!
+
+platform :ios, '8.0'
+target 'HKSample' do
+pod 'MMDrawerController', '~> 0.5.7'
+pod 'AFNetworking', '~> 3.1.0'
+pod 'Masonry', '~> 1.0.1'
+pod 'MJExtension', '~> 3.0.13'
+pod 'MBProgressHUD', '~> 1.0.0'
+pod 'MJRefresh', '~> 3.1.12'
+pod 'IQKeyboardManager', '~> 4.0.5'
+pod 'OHHTTPStubs'
+pod 'FMDB'
+pod 'KVOController'
+pod 'OCMock'
+pod 'WeexSDK'
+pod 'SDWebImage', '3.7.6'
+pod 'ReactiveCocoa', '~> 2.5'
+
+target 'HKSampleTests' do
+    
+end
+
+end
