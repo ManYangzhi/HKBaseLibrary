@@ -54,7 +54,7 @@ WX_EXPORT_METHOD(@selector(refreshWeex))
 - (void)getParams:(WXModuleKeepAliveCallback)callback {
     if (callback) {
         HKWeexBaseViewController *currentVC = (HKWeexBaseViewController *)weexInstance.viewController;
-        id params = currentVC.routerModel.pageName ? currentVC.routerModel.pageName : nil;
+        id params = currentVC.routerModel.params ? currentVC.routerModel.params : nil;
         callback(params, NO);
     }
 }

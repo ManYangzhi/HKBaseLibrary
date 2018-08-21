@@ -137,7 +137,7 @@
 - (UINavigationController *)navigationController
 {
     if (!_navigationController) {
-        UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:self.weexDemoViewController];
+        UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:self.centerViewController];
         navigationController.navigationBar.barTintColor = [UIColor whiteColor];
         [[UINavigationBar appearance] setTranslucent:NO];
         _navigationController = navigationController;

@@ -11,6 +11,13 @@
 #import "HKWeexBaseViewController.h"
 #import "HKNavigationViewController.h"
 #import "HKAppResource.h"
+#import "HKConfigManager.h"
+
+@interface HKMediatorManager ()
+
+@property (nonatomic, assign) NSInteger startLength;
+
+@end
 
 @implementation HKMediatorManager
 
@@ -25,6 +32,21 @@
     return _instance;
 }
 
+- (UIViewController *)loadHomeViewController:(HKRouterModel *)routerModel {
+    self.startLength = self.currentViewController.navigationController.viewControllers.count - 1;
+    
+    HKWeexBaseViewController *controller = [[HKWeexBaseViewController alloc]init];
+    controller.url = [HKAppResource configJSFullURLWithPath:routerModel.url];
+    controller.routerModel = routerModel;
+    return controller;
+}
+
+- (void)backToHomeViewControllerWithWeexInstance:(WXSDKInstance *)weexInstance {
+    UIViewController *currentVC = weexInstance.viewController ? weexInstance.viewController : self.currentViewController;
+    UIViewController *toVC = [currentVC.navigationController.viewControllers objectAtIndex:self.startLength];
+    [currentVC.navigationController popToViewController:toVC animated:YES];
+}
+
 - (void)openViewControllerWithRouterModel:(HKRouterModel *)routerModel weexInstance:(WXSDKInstance *)weexInstance {
     if (!routerModel.url || !routerModel.url.length) {
         WXLogError(@"Error： url 为空");
@@ -36,9 +58,8 @@
 - (void)_openViewControllerWithRouterModel:(HKRouterModel *)routerModel weexInstance:(WXSDKInstance *)weexInstance {
     /* 初始化控制器 */
     HKWeexBaseViewController *controller = [[HKWeexBaseViewController alloc]init];
-//    controller.url = [HKAppResource configJSFullURLWithPath:routerModel.url];
-    controller.url = [NSURL URLWithString:routerModel.url];
-    controller.routerModel = routerModel;
+    controller.url = [HKAppResource configJSFullURLWithPath:routerModel.url];
+    controller.routerModel = routerModel;//上一页传过来的
     controller.hidesBottomBarWhenPushed = YES;
     
     /* 页面展现方式 */
@@ -64,16 +85,17 @@
 }
 
 - (void)backViewControllerWithRouterModel:(HKRouterModel *)routerModel weexInstance:(WXSDKInstance *)weexInstance {
+    UIViewController *currentVC = weexInstance.viewController ? weexInstance.viewController : self.currentViewController;
     if ([routerModel.type isEqualToString:K_ANIMATE_PRESENT] ||
         [routerModel.type isEqualToString:K_ANIMATE_TRANSLATION]) {
-        [weexInstance.viewController dismissViewControllerAnimated:YES completion:nil];
+        [currentVC dismissViewControllerAnimated:YES completion:nil];
     } else {
         if (routerModel.vLength == 1) {
-            [weexInstance.viewController.navigationController popViewControllerAnimated:YES];
+            [currentVC.navigationController popViewControllerAnimated:YES];
             return;
         }
         
-        UINavigationController *navc = weexInstance.viewController.navigationController;
+        UINavigationController *navc = currentVC.navigationController;
         if (navc.viewControllers.count - 1 < routerModel.vLength) {
             [navc popToRootViewControllerAnimated:YES];
             return;

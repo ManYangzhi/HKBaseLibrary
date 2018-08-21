@@ -8,6 +8,7 @@
 
 #import "HKWeexBaseViewController.h"
 #import "HKMediatorManager.h"
+#import "HKWeexBaseViewController+Extend.h"
 
 @interface HKWeexBaseViewController ()
 @property (nonatomic, strong) UIView *weexView;
@@ -43,10 +44,12 @@
     _weexHeight = [[UIScreen mainScreen]bounds].size.height;
     
     // 设置backBarItem
+    [self addBackBarbuttonItem];
     
     /* 设置导航栏shadowImage */
     
     /* 设置title */
+    self.title = self.routerModel.navTitle;
     
     /* 判断是否需要隐藏导航栏 并设置weex页面高度*/
     
@@ -62,9 +65,7 @@
     /* 设置状态栏样式 */
     
     /* 保存当前栈顶的 WXSDKInstance 与 ViewController */
-    /* 保存当前栈顶的 WXSDKInstance 与 ViewController */
     [[HKMediatorManager shareInstance] setCurrentWXInstance:self.instance];
-    [[HKMediatorManager shareInstance] setCurrentViewController:self];
     
     // 通知js页面生命周期
 }

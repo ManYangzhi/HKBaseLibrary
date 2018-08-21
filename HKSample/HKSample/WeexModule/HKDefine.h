@@ -17,4 +17,19 @@
 // js 路径前面默认添加的路径
 #define K_JS_ADD_PATH @"/dist/js"
 
+CG_INLINE void HK_SetUserDefaultData(NSString *key,id value) {
+    
+    if (!key || !value) {
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+CG_INLINE id HK_GetUserDefaultData(NSString *key) {
+    if (!key) {
+        return nil;
+    }
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+}
+
 #endif /* HKDefine_h */

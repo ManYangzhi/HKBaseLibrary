@@ -15,9 +15,9 @@
     /* 拼接完整的路径 */
 //    NSString *urlPath = [NSString stringWithFormat:@"%@%@",[[HKConfigManager shareInstance].platform.url.jsServer stringByAppendingString:K_JS_ADD_PATH],path];
     
-    NSString *urlPath = [NSString stringWithFormat:@"file://%@/bundlejs/%@.js",[NSBundle mainBundle].bundlePath,path];
+//    NSString *urlPath = [NSString stringWithFormat:@"file://%@/bundlejs/%@.js",[NSBundle mainBundle].bundlePath,path];
     
-    return [NSURL URLWithString:urlPath];
+    return [NSURL URLWithString:path];
 }
 
 @end

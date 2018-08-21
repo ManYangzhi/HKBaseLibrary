@@ -18,6 +18,12 @@
 @property (nonatomic, weak) WXSDKInstance *currentWXInstance;           // 当前栈顶的WXSDKInstance
 @property (nonatomic, weak) UIViewController *currentViewController;    // 当前栈顶的ViewController
 
+/** 加载js首页 */
+- (UIViewController *)loadHomeViewController:(HKRouterModel *)routerModel;
+
+/** 返回js首页 */
+- (void)backToHomeViewControllerWithWeexInstance:(WXSDKInstance *)weexInstance;
+
 /**
  打开新的控制器方法
  

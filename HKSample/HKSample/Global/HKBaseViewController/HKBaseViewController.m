@@ -7,6 +7,7 @@
 //
 
 #import "HKBaseViewController.h"
+#import "HKMediatorManager.h"
 
 @interface HKBaseViewController ()
 
@@ -22,6 +23,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    [[HKMediatorManager shareInstance] setCurrentViewController:self];
 }
 
 - (void)didReceiveMemoryWarning {

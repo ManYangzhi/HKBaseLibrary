@@ -67,6 +67,7 @@
 		B245624B1F7E3E610078166C /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = B24562441F7E3E610078166C /* Model.m */; };
 		B245624C1F7E3E610078166C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24562461F7E3E610078166C /* ViewController.m */; };
 		B24562841F8DBA430078166C /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = B24562831F8DBA430078166C /* stub.txt */; };
+		B2EAA754212A97BB003E0B7A /* HKWeexBaseViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EAA753212A97BB003E0B7A /* HKWeexBaseViewController+Extend.m */; };
 		D6F62D3FBE12DF3EA2295364 /* libPods-HKSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E6E23D520A7951F109F4EA /* libPods-HKSample.a */; };
 		EC226A1D1D797C73008F9F5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC226A1C1D797C73008F9F5E /* main.m */; };
 		EC226A201D797C73008F9F5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC226A1F1D797C73008F9F5E /* AppDelegate.m */; };
@@ -247,6 +248,8 @@
 		B24562451F7E3E610078166C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B24562461F7E3E610078166C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B24562831F8DBA430078166C /* stub.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
+		B2EAA752212A97BB003E0B7A /* HKWeexBaseViewController+Extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HKWeexBaseViewController+Extend.h"; sourceTree = "<group>"; };
+		B2EAA753212A97BB003E0B7A /* HKWeexBaseViewController+Extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HKWeexBaseViewController+Extend.m"; sourceTree = "<group>"; };
 		B8E6E23D520A7951F109F4EA /* libPods-HKSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HKSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2C23D8DA09B1708EDF3460 /* Pods-HKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HKSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-HKSample/Pods-HKSample.release.xcconfig"; sourceTree = "<group>"; };
 		EC226A181D797C73008F9F5E /* HKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -382,6 +385,8 @@
 				B241283D2122CA6800B28951 /* HKWeexBaseViewController.m */,
 				B241286E2123CD3100B28951 /* HKNavigationViewController.h */,
 				B241286F2123CD3100B28951 /* HKNavigationViewController.m */,
+				B2EAA752212A97BB003E0B7A /* HKWeexBaseViewController+Extend.h */,
+				B2EAA753212A97BB003E0B7A /* HKWeexBaseViewController+Extend.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1371,6 +1376,7 @@
 				B24562281F7DE8A40078166C /* DesginDuckTestViewController.m in Sources */,
 				EC85F17B1DFF83B000FE98FC /* HKAchieveShortTokenRequest.m in Sources */,
 				EC226AAC1D7D5A0A008F9F5E /* UserAccount.m in Sources */,
+				B2EAA754212A97BB003E0B7A /* HKWeexBaseViewController+Extend.m in Sources */,
 				B245624C1F7E3E610078166C /* ViewController.m in Sources */,
 				B245624A1F7E3E610078166C /* YZNSObject.m in Sources */,
 				B24561E61F73B0CD0078166C /* HKAPIManager.m in Sources */,

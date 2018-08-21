@@ -11,7 +11,7 @@
 #import "HKBaseViewController.h"
 #import "HKRouterModel.h"
 
-@interface HKWeexBaseViewController : UIViewController
+@interface HKWeexBaseViewController : HKBaseViewController
 @property (nonatomic, strong) WXSDKInstance *instance;      /**< instance */
 @property (nonatomic, strong) NSURL *url;
 

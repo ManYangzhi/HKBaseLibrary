@@ -16,6 +16,8 @@
 #import "TestAPIManager.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "HKMediatorManager.h"
+#import "HKRouterModel.h"
 
 @interface HKHomeViewController ()<UINavigationControllerDelegate>
 
@@ -144,8 +146,17 @@
             break;
         case 1:
         {
-            UIViewController *viewController = [[HKMediator sharedInstance] HKMediator_viewControllerForDetail:nil];
-            [self hk_pushViewControllerWithClassName:NSStringFromClass([viewController class])];
+//            UIViewController *viewController = [[HKMediator sharedInstance] HKMediator_viewControllerForDetail:nil];
+//            [self hk_pushViewControllerWithClassName:NSStringFromClass([viewController class])];
+            
+            HKRouterModel *routerModel = [[HKRouterModel alloc]init];
+            routerModel.url = @"http://192.168.31.211:8081/dist/index.js";
+            routerModel.type = K_ANIMATE_PUSH;
+            routerModel.navShow = YES;
+            routerModel.navTitle = @"weex";
+            UIViewController *vcl = [[HKMediatorManager shareInstance] loadHomeViewController:routerModel];
+            [self.navigationController pushViewController:vcl animated:YES];
+            
         }
             break;
             
@@ -157,7 +168,6 @@
 #pragma mark private methods
 - (void)loadSubViews
 {
-    HKWS(weakSelf);
     NSArray *title = @[@"登录业务",@"租车业务"];
     [title enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIButton *btn = [[UIButton alloc]init];
@@ -169,15 +179,12 @@
         [btn addTarget:self action:@selector(loginAndRegisterSender:) forControlEvents:UIControlEventTouchUpInside];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(100, 100));
-            make.centerX.mas_equalTo(weakSelf.view.mas_centerX);
+            make.centerX.mas_equalTo(self.view.mas_centerX);
             make.top.mas_equalTo(200 + idx * 150);
         }];
     }];
 
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
